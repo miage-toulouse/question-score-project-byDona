@@ -30,7 +30,7 @@ public class ScoreCalculateurTest {
         //and : on demande le calcule du score
         Float resScore = scoreCalculateur.calculeScore(indiceEtudiant, questionAChoixMultiple);
 
-        //then : le score obtenu est 100
+        //then :
         assertEquals(new Float(0f), resScore);
 
         // when : liste de réponse contenant 2 et 3
@@ -55,6 +55,32 @@ public class ScoreCalculateurTest {
 
         //then : le score obtenu est 100
         assertEquals(new Float(100f), resScore);
+
+        // when : liste de reponse contenant 1, 2, 3, 4, 5
+        indiceEtudiant.clear();
+        indiceEtudiant.add(1);
+        indiceEtudiant.add(2);
+        indiceEtudiant.add(3);
+        indiceEtudiant.add(4);
+        indiceEtudiant.add(5);
+
+        //and : on demande le calcule du score
+        resScore = scoreCalculateur.calculeScore(indiceEtudiant, questionAChoixMultiple);
+
+        //then :
+        assertEquals(0f, resScore, 0.01f);
+
+        // when : liste de reponse contenant 1, 2, 3, 4, 5
+        indiceEtudiant.clear();
+        indiceEtudiant.add(1);
+        indiceEtudiant.add(2);
+        indiceEtudiant.add(3);
+
+        //and : on demande le calcule du score
+        resScore = scoreCalculateur.calculeScore(indiceEtudiant, questionAChoixMultiple);
+
+        //then :
+        assertEquals(16.66f, resScore, 0.01f);
 
     }
 }

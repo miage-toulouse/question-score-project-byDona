@@ -11,6 +11,7 @@ import static org.junit.Assert.*;
 public class QuestionAChoixMultipleTest {
     private QuestionAChoixMultiple uneQuestion;
     private List <Integer> reponse;
+    private int nbQuestion;
 
     @Before
     public void setUp() throws Exception {
@@ -18,7 +19,8 @@ public class QuestionAChoixMultipleTest {
         reponse = new ArrayList<Integer>();
         reponse.add(2);
         reponse.add(3);
-        uneQuestion = new QuestionAChoixMultiple("un énoncé", reponse);
+        nbQuestion = 4;
+        uneQuestion = new QuestionAChoixMultiple("un énoncé", reponse, 4);
     }
 
     @Test

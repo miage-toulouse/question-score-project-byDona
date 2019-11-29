@@ -17,9 +17,8 @@ public class ScoreCalculateur {
         for (int indice:indicesReponseEtudiant) {
             score += question.getScoreForIndice(indice);
         }
-        return score;
+
+        return Math.max(0,score);
     }
-
-
 
 }
