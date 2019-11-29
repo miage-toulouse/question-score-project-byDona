@@ -52,18 +52,16 @@ public class QuestionAChoixMultipleTest {
         assertEquals(new Float(100f), resScore);
 
         // when : quand un étudiant fourni l'indice correspondant à une seule réponse
-        resScore = null;
         indiceEtudiant.clear();
         indiceEtudiant.add(2);
 
         //and : on demande le calcule du score
         resScore = uneQuestion.getScoreForIndice(indiceEtudiant.get(0));
 
-        //then : le score obtenu est 100
+        //then :
         assertEquals(new Float(100f/reponse.size()), resScore);
 
         // when : quand un étudiant fourni l'indice correspondant à une mauvaise réponse
-        resScore = null;
         indiceEtudiant.clear();
         indiceEtudiant.add(1);
 
@@ -71,7 +69,7 @@ public class QuestionAChoixMultipleTest {
         resScore = uneQuestion.getScoreForIndice(indiceEtudiant.get(0));
 
 
-        //then : le score obtenu est 100
+        //then :
         assertEquals(new Float(0f), resScore);
     }
 }
